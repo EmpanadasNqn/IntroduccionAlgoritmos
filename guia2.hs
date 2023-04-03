@@ -39,8 +39,8 @@ todosMenores10 (x:xs) = (x < 10) == todosMenores10 xs
 
 -- (5b) Funcion Recursiva Fold para saber si hay 0 en la lista
 hay0 :: [Int] -> Bool
-hay0 [] = True
-hay0 (x:xs) = (x == 0) == hay0 xs
+hay0 [] = False
+hay0 (x:xs) = (x == 0) || hay0 xs
 
 -- (5c) Funcion Recursiva Fold de sumatoria
 sumatoria :: [Int] -> Int
@@ -57,3 +57,36 @@ repartir (x:xs) (y:ys) = (x,y) : repartir xs ys
 apellidos :: [(String, String, Int)] -> [String]
 apellidos [] = []
 apellidos ((x,y,z):xs) = y : apellidos xs
+
+-- (8) Funcion Length definida recursivamente
+lengthRecursiva :: [Int] -> Int
+lengthRecursiva [] = 0
+lengthRecursiva (x:xs) = 1 + length xs
+
+-- (8) Funcion !! definida recursivamente
+exclamacionRecursiva :: [Int] -> Int -> Int
+exclamacionRecursiva (x:xs) 0 = x
+exclamacionRecursiva (x:xs) y = exclamacionRecursiva xs (y - 1)
+
+-- (8) Funcion take definida recursivamente
+takeRecursiva :: Int -> [Int] -> [Int]
+takeRecursiva 0 xs = []
+takeRecursiva y (x:xs) = x : takeRecursiva (y - 1) xs
+
+-- (8) Funcion drop definida recursivamente
+dropRecursiva :: Int -> [Int] -> [Int]
+dropRecursiva 0 xs = xs
+dropRecursiva y (x:xs) = dropRecursiva (y - 1) xs
+
+-- (8) Funcion ++ definida recursivamente
+sumsumRecursiva :: [Int] -> [Int] -> [Int]
+sumsumRecursiva [] ys = ys
+sumsumRecursiva (x:xs) ys = x : sumsumRecursiva xs ys
+
+-- (9a) Funcion Filter maximo de una lista
+maximo :: [Int] -> Int
+maximo [x] = x
+maximo (x:xs) = max x (maximo xs)
+
+-- (9b) Funcion Fold
+Suma
