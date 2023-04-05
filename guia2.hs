@@ -59,12 +59,12 @@ apellidos [] = []
 apellidos ((x,y,z):xs) = y : apellidos xs
 
 -- (8) Funcion Length definida recursivamente
-lengthRecursiva :: [Int] -> Int
+lengthRecursiva :: [a] -> Int
 lengthRecursiva [] = 0
 lengthRecursiva (x:xs) = 1 + length xs
 
 -- (8) Funcion !! definida recursivamente
-exclamacionRecursiva :: [Int] -> Int -> Int
+exclamacionRecursiva :: [a] -> Int -> a
 exclamacionRecursiva (x:xs) 0 = x
 exclamacionRecursiva (x:xs) y = exclamacionRecursiva xs (y - 1)
 
@@ -79,7 +79,7 @@ dropRecursiva 0 xs = xs
 dropRecursiva y (x:xs) = dropRecursiva (y - 1) xs
 
 -- (8) Funcion ++ definida recursivamente
-sumsumRecursiva :: [Int] -> [Int] -> [Int]
+sumsumRecursiva :: [a] -> [a] -> [a]
 sumsumRecursiva [] ys = ys
 sumsumRecursiva (x:xs) ys = x : sumsumRecursiva xs ys
 
@@ -93,8 +93,8 @@ sumaDePares :: [(Int,Int)] -> Int
 sumaDePares [] = 0
 sumaDePares ((x,y):xs) = (x + y) + sumaDePares xs
 
---(9c) funcion filter?
+-- (9c) Funcion Filter?
 todo0y1 :: [Int] -> Bool
 todo0y1 [] = False
-todo0y1 (x:xs) = (x==1 || x==0) == todo0y1 xs
+todo0y1 (x:xs) = (x==1 && x==0) == todo0y1 xs
 
