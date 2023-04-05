@@ -89,4 +89,5 @@ maximo [x] = x
 maximo (x:xs) = max x (maximo xs)
 
 -- (9b) Funcion Fold
-Suma
+suma :: Int -> Int
+suma x = 0
