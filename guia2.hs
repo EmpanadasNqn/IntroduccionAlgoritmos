@@ -100,3 +100,19 @@ todo0y1 [x] = x == 1 || x == 0
 todo0y1 (x:xs) |(x /= 0 && x /= 1) = False
                |otherwise = todo0y1 xs
  
+-- (9d) Funcion Filter
+quitar0 :: [Int] -> [Int]
+quitar0 [] = []
+quitar0 (x:xs)|(x /= 0) = x : quitar0 xs
+              |otherwise = quitar0 xs
+
+-- (9e) Funcion Fold
+ultimoush :: [a] -> a
+ultimoush [x] = x
+ultimoush (x:xs) = ultimoush xs
+
+-- (9f) Funcion 
+repetir :: Int -> Int -> [Int]
+repetir 0 n = []
+repetir k n = n : repetir (k - 1) n
+
