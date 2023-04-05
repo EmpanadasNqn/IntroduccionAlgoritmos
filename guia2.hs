@@ -89,5 +89,12 @@ maximo [x] = x
 maximo (x:xs) = max x (maximo xs)
 
 -- (9b) Funcion Fold
-suma :: Int -> Int
-suma x = 0
+sumaDePares :: [(Int,Int)] -> Int
+sumaDePares [] = 0
+sumaDePares ((x,y):xs) = (x + y) + sumaDePares xs
+
+--(9c) funcion filter?
+todo0y1 :: [Int] -> Bool
+todo0y1 [] = False
+todo0y1 (x:xs) = (x==1 || x==0) == todo0y1 xs
+
