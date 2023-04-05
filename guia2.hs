@@ -116,3 +116,16 @@ repetir :: Int -> Int -> [Int]
 repetir 0 n = []
 repetir k n = n : repetir (k - 1) n
 
+-- (9g) Funcion Fold
+conca :: [[a]] -> [a]
+conca [] = []
+conca ([]:xs) = conca xs
+conca ((y:ys):xs) = y : conca (ys:xs)
+
+-- (9h) Funcion
+rev :: [a] -> [a]
+rev [] = []
+rev (x:xs) = (rev xs) ++ [x]
+
+
+ 
