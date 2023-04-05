@@ -126,6 +126,3 @@ conca ((y:ys):xs) = y : conca (ys:xs)
 rev :: [a] -> [a]
 rev [] = []
 rev (x:xs) = (rev xs) ++ [x]
-
-
- 
