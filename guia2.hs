@@ -97,6 +97,6 @@ sumaDePares ((x,y):xs) = (x + y) + sumaDePares xs
 todo0y1 :: [Int] -> Bool
 todo0y1 [] = False
 todo0y1 [x] = x == 1 || x == 0
-todo0y1 (x:xs) |(x /= 0 || x /= 1) = todo0y1 xs
-               |otherwise = True
+todo0y1 (x:xs) |(x /= 0 && x /= 1) = False
+               |otherwise = todo0y1 xs
  
