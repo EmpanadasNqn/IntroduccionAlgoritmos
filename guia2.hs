@@ -1,3 +1,6 @@
+-- Funcion XD (Un antes y un despues en el uso de (x:xs))
+equisd :: [Int] -> Int
+equisd (x:xd)= x
 
 -- (3a) Funcion Recursiva Filter para guardar pares
 soloPares :: [Int] -> [Int]
