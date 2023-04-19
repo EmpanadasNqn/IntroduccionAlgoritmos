@@ -129,3 +129,26 @@ conca ((y:ys):xs) = y : conca (ys:xs)
 rev :: [a] -> [a]
 rev [] = []
 rev (x:xs) = (rev xs) ++ [x]
+
+-- (20a)
+listasIguales ::Eq a => [a] -> [a] -> Bool
+listasIguales [] [] = True
+listasIguales [] ys = False
+listasIguales xd [] = False 
+listasIguales (x:xd) (y:ys) | (x == y) = listasIguales xd ys
+                            | otherwise = False
+
+-- (20b)
+mejorNota :: [(String,Int,Int,Int)] -> [(String,Int)]
+mejorNota [] = []
+mejorNota ((x,y,z,w):xd) = (x, max y (max z w)) : mejorNota xd
+
+-- (20c)
+incPrim :: [(Int,Int)] -> [(Int,Int)]
+incPrim [] = []
+incPrim ((x,y):xd) = (x + 1, y) : incPrim xd
+
+-- (20d)
+expandir :: String -> String
+expandir [] = []
+expandir (x:xd) = (x : " ") ++ expandir xd
